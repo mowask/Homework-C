@@ -10,8 +10,8 @@ public:
 
 	friend std::ostream& operator << (std::ostream& cout, Parrot& p);
 
-	void getAlive() {
-		alive = true;
+	bool getAlive() {
+		return alive;
 	}
 
 };
