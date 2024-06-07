@@ -1,0 +1,6 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8028: промежуточный каталог (x64\Debug\) содержит файлы, которые используются совместно с другим проектом (OOP Lesson 22.vcxproj).  Это может привести к ошибкам очистки и перестроения.
+  FileHandler.cpp
+  OOP Lesson 22.cpp
+  Student.cpp
+  Создание кода...
+  OOP Lesson 22.vcxproj -> C:\Users\Студент.TOP\source\repos\OOP Lesson 22\x64\Debug\OOP Lesson 22 EXAM Project.exe
