@@ -3,6 +3,7 @@
 #include <fstream>
 #include <sstream>
 #include <vector>
+#include <string>
 
 using namespace std;
 
@@ -21,7 +22,20 @@ public:
 
 	FileHandler(string pathP) : path{ pathP } {}
 
-	void readThemeAnimals(string wordsA) {}
+	void readThemeAnimals(string wordsA) {
+		fin.open(path);
+		if (fin.is_open()) {
+			vector<string> line;
+			while (!fin.eof()) {
+				/*if (getline(fin, line)) {
+					stringstream ss(line);
+					getline(ss, loginTemp, ';');					
+					ss.ignore();
+					users[loginTemp] = new Student(loginTemp);*/
+				}
+			}
+			fin.close();
+	}
 	void readThemeClothes(string wordsC) {}
 	void readThemeFood(string wordsF) {}
 	void readThemeItems(string wordsI) {}
