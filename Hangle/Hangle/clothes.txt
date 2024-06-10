@@ -1,1 +1,17 @@
-dress shirt pants skirt jeans sweater jacket hat shoes socks gloves scarf bra panties boots junper blouse 
+dress
+shirt
+pants
+skirt
+jeans
+sweater
+jacket
+hat
+shoes
+socks
+gloves
+scarf
+bra
+panties
+boots
+junper
+blouse

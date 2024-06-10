@@ -10,11 +10,11 @@
 using namespace std;
 
 
-vector <string> wordsA = { "fish", "dog", "cat", "elephant", "lion", "tiger", "monkey", "zebra", "giraffe", "bear", "kangaroo", "koala", "penguin", "seal", "hippo", "chiken", "wolf", "panda", "frog", "owl", "bunny", "ladybug", "fox", "dragonfly", "sheep", "octopus", "butterfly", "whale", "sheep", "horse", "goat", "pig", "snake" };
-vector <string> wordsP = { "flower", "tree", "grass", "sunflower", "rose", "cactus", "lily", "dandelion", "tulip",  "oak", "birch", "pine", "iris", "lotus", "violet", "dandelion" };
-vector <string> wordsF = { "apple", "peach", "banana", "orange", "strawberry", "grapefruit", "carrot", "potato", "sandwich", "chicken", "beef", "salad", "cake" };
-vector <string> wordsC = { "dress", "shirt", "pants", "skirt", "jeans", "sweater", "jacket", "hat", "shoes", "socks", "gloves", "scarf", "bra", "panties", "boots", "junper", "blouse" };
-vector <string> wordsI = { "pencil", "book", "chair", "table", "computer", "desk", "notebook", "pen", "calculator", "clock", "backpack", "ruler", "scissors", "marker", "board" };
+vector <string> wordsA;// = { "fish" , "dog", "cat", "elephant", "lion", "tiger", "monkey", "zebra", "giraffe", "bear", "kangaroo", "koala", "penguin", "seal", "hippo", "chiken", "wolf", "panda", "frog", "owl", "bunny", "ladybug", "fox", "dragonfly", "sheep", "octopus", "butterfly", "whale", "sheep", "horse", "goat", "pig", "snake" };
+vector <string> wordsC;// = { "dress", "shirt", "pants", "skirt", "jeans", "sweater", "jacket", "hat", "shoes", "socks", "gloves", "scarf", "bra", "panties", "boots", "junper", "blouse" };
+vector <string> wordsF;// = { "apple", "peach", "banana", "orange", "strawberry", "grapefruit", "carrot", "potato", "sandwich", "chicken", "beef", "salad", "cake" };
+vector <string> wordsI;// = { "pencil", "book", "chair", "table", "computer", "desk", "notebook", "pen", "calculator", "clock", "backpack", "ruler", "scissors", "marker", "board" };
+vector <string> wordsP;// = { "flower", "tree", "grass", "sunflower", "rose", "cactus", "lily", "dandelion", "tulip",  "oak", "birch", "pine", "iris", "lotus", "violet", "dandelion" };
 
 string word, guessedLetters;
 
@@ -31,8 +31,10 @@ void randomTheme () {
                 key = themeKey[rand() % themeKey.size()];
                 break;
             }
-        }
+           
     }
+    //cout << " -*-" << key << "-*-";
+}
 
                 //  выбор темы
 void Start() {
@@ -54,7 +56,7 @@ void Start() {
                 //  выбор слова из массива заданной темы
 void chooseWord() {                                                             
     if (key == 'a' || key == 'A' || key == 1) {
-        word = wordsA[rand() % wordsA.size()];
+        word = wordsA[rand() % wordsC.size()];       
         cout << "Theme: animals" << endl;
     }    
     else if (key == 'c' || key == 'C' || key == 2) {
@@ -175,17 +177,32 @@ void printGuessedWord() {
 }
 
 void clearScreen() {
-    system("cls");
+    //system("cls");
 }
 
 int main() {
+
+    FileHandler animal("d:\\animals.txt");
+    FileHandler cloth("d:\\clothes.txt");
+    FileHandler food("d:\\food.txt");
+    FileHandler item("d:\\items.txt");
+    FileHandler plant("d:\\plants.txt");
+    
+    animal.readThemeAnimals(wordsA);
+    cloth.readThemeClothes(wordsC);
+    food.readThemeFood(wordsF);
+    item.readThemeItems(wordsI);
+    plant.readThemePlans(wordsP);
+
+    //for (auto word : wordsA)
+    //    cout << word<< " ";
        
-    /*ofstream fout;
-    fout.open("c:\\clothes.txt", ios::out);
+   /* ofstream fout;
+    fout.open("d:\\plants.txt", ios::out);
     if (fout) {    
-        for (auto i : wordsC) {
+        for (auto i : wordsP) {
             fout << i;
-            fout << " ";
+            fout << "\n";
         }
     }*/
 
@@ -196,9 +213,7 @@ int main() {
         Start();
         clearScreen();
 
-        chooseWord();
-
-        
+        chooseWord();        
 
         int attemptsLeft = 7;
 
