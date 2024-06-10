@@ -3,30 +3,36 @@
 #include <vector>
 #include <ctime>
 #include <conio.h> 
+#include <fstream>
+
+#include "FileHendler.h"
+
 using namespace std;
 
 
-vector <int> wordsKey = { 1, 2 ,3 ,4 ,5 };
 vector <string> wordsA = { "fish", "dog", "cat", "elephant", "lion", "tiger", "monkey", "zebra", "giraffe", "bear", "kangaroo", "koala", "penguin", "seal", "hippo", "chiken", "wolf", "panda", "frog", "owl", "bunny", "ladybug", "fox", "dragonfly", "sheep", "octopus", "butterfly", "whale", "sheep", "horse", "goat", "pig", "snake" };
 vector <string> wordsP = { "flower", "tree", "grass", "sunflower", "rose", "cactus", "lily", "dandelion", "tulip",  "oak", "birch", "pine", "iris", "lotus", "violet", "dandelion" };
 vector <string> wordsF = { "apple", "peach", "banana", "orange", "strawberry", "grapefruit", "carrot", "potato", "sandwich", "chicken", "beef", "salad", "cake" };
 vector <string> wordsC = { "dress", "shirt", "pants", "skirt", "jeans", "sweater", "jacket", "hat", "shoes", "socks", "gloves", "scarf", "bra", "panties", "boots", "junper", "blouse" };
 vector <string> wordsI = { "pencil", "book", "chair", "table", "computer", "desk", "notebook", "pen", "calculator", "clock", "backpack", "ruler", "scissors", "marker", "board" };
+
 string word, guessedLetters;
-int length, key;
+
+int key;
 
                 //  функция выбора случайной темы
 void randomTheme () {
+    vector <int> themeKey = { 1, 2 ,3 ,4 ,5 };
+
     while (!(key == 'a' || key == 'A' || key == 'p' || key == 'P' || key == 'f' || key == 'F' || key == 'c' || key == 'C' || key == 'i' || key == 'I')) {
       
             key = _getch();
             if (key == 'r' || key == 'R') {
-                key = wordsKey[rand() % wordsKey.size()];
+                key = themeKey[rand() % themeKey.size()];
                 break;
             }
         }
     }
-
 
                 //  выбор темы
 void Start() {
@@ -82,11 +88,7 @@ bool isWordGuessed() {
                 //  отрисовка виселицы
 void printHangman(int attemptsLeft) {
     if (attemptsLeft == 7) {
-        //for (int i = 0; i < 7; i++) 
-        //    cout << "_";
-        
-        for (int j = 0; j < 7; j++) 
-            cout << "*";        
+       cout << endl;
     }
     else if (attemptsLeft == 6) {        
         cout << "_________          " << endl;
@@ -177,6 +179,15 @@ void clearScreen() {
 }
 
 int main() {
+       
+    /*ofstream fout;
+    fout.open("c:\\clothes.txt", ios::out);
+    if (fout) {    
+        for (auto i : wordsC) {
+            fout << i;
+            fout << " ";
+        }
+    }*/
 
     srand(time(NULL));   
 
@@ -186,7 +197,8 @@ int main() {
         clearScreen();
 
         chooseWord();
-        length = word.length();
+
+        
 
         int attemptsLeft = 7;
 
@@ -250,7 +262,7 @@ int main() {
                 clearScreen();          
         }
         if (key == 27) break; 
-        length, key = 0;
+       key = 0;
         word = "";
         guessedLetters = "";
     }

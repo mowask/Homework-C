@@ -127,7 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="FileHendler.cpp" />
     <ClCompile Include="Main Hangle.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FileHendler.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

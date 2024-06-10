@@ -1,4 +1,3 @@
 ﻿  Main Hangle.cpp
-C:\Users\Царь-Бог Алексей\source\repos\Home Work\Hangle\Hangle\Main Hangle.cpp(181,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-C:\Users\Царь-Бог Алексей\source\repos\Home Work\Hangle\Hangle\Main Hangle.cpp(189,29): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\Царь-Бог Алексей\source\repos\Home Work\Hangle\Hangle\Main Hangle.cpp(193,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
   Hangle.vcxproj -> C:\Users\Царь-Бог Алексей\source\repos\Home Work\Hangle\x64\Debug\Hangle.exe
